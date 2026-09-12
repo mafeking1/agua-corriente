@@ -551,6 +551,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     curProduct = product; curIdx = 0;
     renderLightbox();
     lb.hidden = false;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'event': 'ver_carrusel_paquete', 'paquete': product});
   }
   function closeLightbox(){ lb.hidden = true; }
   function stepLightbox(dir){
