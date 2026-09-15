@@ -32,4 +32,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://agua-corriente.torcua.workers.dev/sitemap.xml
+Sitemap: https://agua-corriente.torcua.com.ar/sitemap.xml
