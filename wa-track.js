@@ -33,9 +33,9 @@
   function ubicacion(el) {
     if (el.getAttribute("data-wa-loc")) return el.getAttribute("data-wa-loc");
     if (el.closest(".wa-float")) return "flotante";
+    if (el.closest(".hero")) return "hero";
     if (el.closest("header, .top, nav")) return "encabezado";
     if (el.closest("footer")) return "pie";
-    if (el.closest(".hero")) return "hero";
     if (el.closest(".cotizador")) return "cotizador";
     if (el.closest(".pkg")) return "paquete";
     if (el.closest("form")) return "formulario";
