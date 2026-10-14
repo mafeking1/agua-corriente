@@ -72,6 +72,35 @@
     registrar(cod, ubicacion(a), a.getAttribute("aria-label") || a.textContent);
   }, true);
 
+  // Botón flotante: halo suave permanente y burbuja de texto que aparece solo al pasar el puntero.
+  // (Todo vive acá para que los tres sitios se vean exactamente igual.)
+  function flotante() {
+    var botones = document.querySelectorAll(".wa-float");
+    if (!botones.length) return;
+    var css = document.createElement("style");
+    css.textContent =
+      ".wa-float{overflow:visible}" +
+      ".wa-float::before{content:'';position:absolute;inset:-9px;border-radius:50%;background:#178043;opacity:.22;z-index:-1;animation:wa-halo 2.4s ease-out infinite}" +
+      "@keyframes wa-halo{0%{transform:scale(.8);opacity:.35}100%{transform:scale(1.25);opacity:0}}" +
+      ".wa-float-tip{position:absolute;right:calc(100% + 14px);top:50%;transform:translate(8px,-50%);background:#fff;color:#132226;" +
+      "border-radius:14px;padding:12px 18px;box-shadow:0 6px 24px rgba(0,0,0,.18);white-space:nowrap;text-align:left;line-height:1.25;" +
+      "opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s}" +
+      ".wa-float-tip span{display:block;font-size:15px;font-weight:400}" +
+      ".wa-float-tip strong{display:block;font-size:17px;font-weight:700}" +
+      "@media (hover:hover) and (pointer:fine){.wa-float:hover .wa-float-tip,.wa-float:focus-visible .wa-float-tip{opacity:1;visibility:visible;transform:translate(0,-50%)}}" +
+      "@media (prefers-reduced-motion:reduce){.wa-float::before{animation:none;opacity:.18}.wa-float-tip{transition:none}}";
+    document.head.appendChild(css);
+    for (var i = 0; i < botones.length; i++) {
+      var tip = document.createElement("span");
+      tip.className = "wa-float-tip";
+      tip.setAttribute("aria-hidden", "true");
+      tip.innerHTML = "<span>¿Necesitás ayuda?</span><strong>Chateá con nosotros</strong>";
+      botones[i].appendChild(tip);
+    }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", flotante);
+  else flotante();
+
   // Para botones que abren WhatsApp por script (por ejemplo, un formulario).
   window.torcuaWA = {
     abrir: function (url, loc) {
