@@ -80,7 +80,7 @@
     var css = document.createElement("style");
     css.textContent =
       ".wa-float{overflow:visible}" +
-      ".wa-float::before{content:'';position:absolute;inset:-9px;border-radius:50%;background:#178043;opacity:.22;z-index:-1;animation:wa-halo 2.4s ease-out infinite}" +
+      ".wa-float::before{content:'';position:absolute;inset:-9px;border-radius:50%;background:#178043;opacity:.22;z-index:-1;animation:wa-halo 1.2s ease-out infinite}" +
       "@keyframes wa-halo{0%{transform:scale(.8);opacity:.35}100%{transform:scale(1.25);opacity:0}}" +
       ".wa-float-tip{position:absolute;right:calc(100% + 14px);top:50%;transform:translate(8px,-50%);background:#fff;color:#132226;" +
       "border-radius:14px;padding:12px 18px;box-shadow:0 6px 24px rgba(0,0,0,.18);white-space:nowrap;text-align:left;line-height:1.25;" +
