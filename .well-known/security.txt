@@ -1,0 +1,4 @@
+Contact: https://wa.me/5491166056378
+Expires: 2027-10-20T00:00:00.000Z
+Preferred-Languages: es
+Canonical: https://filtro-agua.torcua.com.ar/.well-known/security.txt
