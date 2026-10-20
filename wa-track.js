@@ -12,6 +12,7 @@
 
   var SITIOS = {
     "agua-corriente.torcua.com.ar": "agua",
+    "filtro-agua.torcua.com.ar": "agua",
     "mecanica.torcua.com.ar": "mecanica",
     "mosquiteros.torcua.com.ar": "mosquiteros"
   };
